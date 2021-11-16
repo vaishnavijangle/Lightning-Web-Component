@@ -1,0 +1,178 @@
+integer a;
+string b = 'vai';
+system.debug('int = '+a);
+system.debug('string = '+b);
+Datetime da = Datetime.newInstance(2021, 3, 16, 8, 10, 00);
+system.debug('first da = '+ da);
+Datetime da2 = da.addHours(2);
+system.debug('da2 = '+ da2);
+Datetime da3 = da.addDays(4);
+system.debug('da3 = '+ da3);
+Datetime da4 = da.addMonths(3);
+System.debug('da4 = '+da4);
+Date dateitem = da.date();
+system.debug('dateitem = '+dateitem);
+String da5 = da.format();
+system.debug('da5 = '+da5);
+string da6 = 'hi';
+system.debug('da6 ='+da6);
+string c = 'abcdsg';
+boolean b1 = c.contains('C');
+system.debug('b1 = '+ b1);
+string d = 'ABCDSG';
+system.debug('equal? = '+ (c == d));
+string e = 'hi1';
+system.debug('equal? = '+ (e == d));
+system.debug('Not equal? = '+ (e != d));
+string dem =' The hello ! hi ! ! ! !';
+system.debug(dem.replaceAll('!(.*?)!', '1'));
+system.debug(dem.replaceAll('!(.*?)!', '$1'));
+List<String> empName = new List<String>{'a', 'b'};
+    for(string en:empName){
+        for(Integer i =0; i<3; i++){
+           system.debug('Name = '+en+' i='+i); 
+        }
+        
+    }
+
+for (Integer i=1; i<5; i++){
+    for(Integer j=1; j<=i; j++){
+        system.debug(j);
+    }
+}
+for(integer i=1; i<17; i+=3){
+    system.debug(i);
+}
+
+for(integer i=20; i>4; i-=5){
+    system.debug(i);
+}
+for(integer i=2; i<11; i+=2){
+    system.debug(i);
+}
+
+
+
+
+
+Inheritance :
+
+public virtual class InheritanceDemo {
+    public void model(){
+        system.debug('model method');
+    } 
+    public virtual void speed(){
+        system.debug('need to update thats a why used virtual keyword');
+    }
+
+}
+
+public class InheritanceDemo2 extends InheritanceDemo {
+    public override void speed(){
+        system.debug('override from InheritanceDemo class');
+    }
+    public void model1(){
+        system.debug('from InheritanceDemo2 class');
+    }
+
+}
+
+InheritanceDemo d = new InheritanceDemo();
+d.speed();
+d.model();
+InheritanceDemo2 d1 = new InheritanceDemo2();
+d1.speed();
+d1.model();
+d1.model1();
+
+List , set and Maps:
+
+List<string> l =new List<string>();
+l.add('a');
+l.add('b');
+l.add('c');
+l.add('a');
+system.debug('list = '+l);
+l.add(0,'e');
+l.add(4,'d');
+system.debug('list1 = '+l);
+l.remove(0);
+system.debug('list2 = '+l);
+List<Integer> intlist = new List<Integer> {1,2,3,4};
+    system.debug('intlist = '+intlist);
+String[] name = new List<string>{'a', 'b'};
+    system.debug('name = '+name);
+l.sort();
+system.debug('list sort = '+l);
+Set<string> l1 =new set<string>();
+l1.add('a');
+l1.add('b');
+l1.add('c');
+l1.add('a');
+l1.add('a');
+l1.add('a');
+l1.add('null');
+l1.add('null');
+system.debug('list = '+l1);
+l1.clear();
+system.debug('list size = '+l1.size());
+// throw error 
+//String[] name1 = new set<string>{'a', 'b'};
+    //system.debug('name1 = '+name1);
+
+Map<integer, string> hmap = new Map<integer, string>();
+hmap.put(1, 'b');
+hmap.put(1, 'ab');
+hmap.put(1, 'a');
+hmap.put(1, 'c');
+hmap.put(2, 'a');
+hmap.put(3, 'z');
+system.debug('map = '+hmap);
+system.debug('size map = '+hmap.size());
+system.debug('get element from map = '+hmap.get(2));
+hmap.clear();
+system.debug('clear map = '+hmap.size());
+// sobject example
+List <Sobject> ob = new List<Sobject>();
+Account acc = new Account(Name = 'SBI');
+Account acc1 = new Account(Name = 'Axis');
+Account acc2 = new Account(Name = 'HDFC');
+Account acc3 = new Account(Name = 'NEO');
+Account acc4 = new Account(Name = 'ICCIC');
+Account acc5 = new Account(Name = 'BANK OF PANJAB');
+Account acc6 = new Account(Name = 'KOTAK');
+List <Opportunity> opp = new List<Opportunity>();
+for (integer i = 1; i<10; i++){
+    String var = 'opp' + i;
+    Opportunity var1 = new Opportunity(Name = var);
+    String acc = 'acc' + i;
+    Account acc1 = new Account(Name = acc);
+    ob.add(var1);
+    opp.add(var1);
+    ob.add(acc1);
+}
+system.debug('sobject list = '+ob);
+system.debug('object list = '+opp);
+
+
+
+
+
+
+//Exception demo
+
+try{
+ Account l = new Account(Name='Pramod');
+ insert l; 
+    Account a = [select Name, Description from Account where id=: l.id];
+    system.debug('a = '+ a);
+    string name = a.Name;
+    string dis = a.description;
+    system.debug('name = '+ name);
+    system.debug('dis = '+ dis);
+}
+catch(Exception e){
+ system.debug('exception = '+e.getMessage());   
+}
+
+system.debug('create new lead record');
