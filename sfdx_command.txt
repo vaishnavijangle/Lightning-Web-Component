@@ -1,0 +1,5 @@
+for sfdx for connecting to scrach org :
+sfdx force:auth:web:login -a vaishnavijangle1603 -d
+sfdx force:org:create -a lwcscratchorg -d 30 -f config/project-scratch-def.json -s
+sfdx force:org:open
+sfdx force:source:push
