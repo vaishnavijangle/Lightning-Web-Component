@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title='First_LWC'>
+        <div class="color-title">First LWC Program {dynamicVar}</div>
+        <div style="color:aqua; background:brown">In line CSS Style</div>
+        <lightning-input label="Greet" onchange={greetingChangeHandler}></lightning-input>
+        <template if:true={dynamicVar}>
+            <p>"I am true"</p>
+        </template>
+    </lightning-card>
+    <template for:each={cityList} for:item="city">
+        <p key={city}>{city}</p>
+    </template>
+    <h1> Below is for iterative tag.</h1>
+    <template iterator:it={cityList}>
+        <p key={it.value}>{it.value}</p>
+        <p key={it.value}>{it.first}</p>
+        <p key={it.value}>{it.last}</p>
+        <p key={it.value}>{it.index}</p>
+    </template>
+</template>

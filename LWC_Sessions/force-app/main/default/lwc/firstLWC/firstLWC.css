@@ -1,0 +1,11 @@
+.color-title{
+    color : green;
+}
+div{
+    color:crimson;
+    
+}
+:host{
+    border: 3px solid red;
+    background :darkkhaki;
+}

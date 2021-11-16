@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Simple Interest">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size='12' padding="around-medium">
+                <lightning-input  type="number" label = "Principle" onchange={getPrinciple}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size='12' padding="around-medium">
+                <lightning-input  type="number" label = "RateofInterest" onchange={getRateofInterest}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size='12' padding="around-medium">
+                <lightning-input type="number" label = "Time" onchange={getTime}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size='12' padding="around-medium">
+                <lightning-button label="Simple Interest" onclick={getCalculation}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-formatted-text value={result}></lightning-formatted-text>
+            </lightning-layout-item>
+            <p>
+            value={result};
+            </p>
+        </lightning-layout>
+    </lightning-card>
+    
+</template>
